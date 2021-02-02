@@ -1,0 +1,75 @@
+.create-form {
+    background-color: rgb(230, 230, 230);
+    width: 400px;
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin: 10px 0 20px 0;
+
+    .ng-invalid {
+        &.ng-touched {
+            border-color: red !important;
+        }
+    }
+
+    .input-div {
+        height: 100px;
+        padding: 5px 0;
+
+        input,
+        input:focus-visible {
+            transition: border-color 0.5s ease;
+            background-color: transparent;
+            outline: none;
+            border: none;
+            height: 30px;
+            color: black;
+            font-size: 20px;
+            line-height: 30px;
+            border-bottom: rgb(86, 126, 255) 2px solid;
+            margin-bottom: 10px;
+
+            &:focus {
+                border-color: rgb(0, 55, 235);
+            }
+        }
+
+        label {
+            display: block;
+            padding: 0 0 5px 0;
+            font-size: 18px;
+            font-weight: bold;
+            color: rgb(54, 80, 136);
+        }
+
+        span {
+            display: block;
+            color: red;
+        }
+    }
+
+    button {
+        cursor: pointer;
+        color: white;
+        font-size: 16px;
+        padding: 6px 12px;
+        background-color: rgb(10, 104, 228);
+
+        &:hover {
+            background-color: rgb(17, 82, 167);
+        }
+
+        &:disabled {
+            cursor: not-allowed;
+            background-color: gray;
+        }
+    }
+}
+
+.pill-success {
+    user-select: none;
+    background-color: rgb(27, 163, 27);
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+}

@@ -1,0 +1,27 @@
+<div *ngIf="hero; else loading">
+  <h2>{{hero.name | uppercase}} Details</h2>
+  <div>
+    <label>ID: </label>
+    {{hero.id}}
+  </div>
+  <div>
+    <label>Name: </label>
+    {{ hero.name }}
+  </div>
+  <div>
+    <label>Superpower: </label>
+    {{ hero.superpower }}
+  </div>
+  <div class='suit-label'>
+    <label>Suit color: </label>
+    <div class='suit-color' [ngStyle]="{'background-color':hero.suitColor}">
+    </div>
+  </div>
+  <button (click)="goBack()">Go Back</button>
+  <button routerLink='/heroes/{{hero.id}}/edit'>Edit</button>
+
+</div>
+
+<ng-template #loading>
+  <img src='https://miro.medium.com/max/882/1*9EBHIOzhE1XfMYoKz1JcsQ.gif' />
+</ng-template>

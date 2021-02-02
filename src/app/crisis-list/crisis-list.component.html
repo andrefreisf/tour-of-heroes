@@ -1,0 +1,10 @@
+<h2>Current crises</h2>
+<div *ngIf="crises; else loading" class="crisis-list">
+    <div routerLink="/crises/{{crisis.id}}" *ngFor="let crisis of crises">
+        <img src="{{ crisis.img }}" /> {{crisis.title}}
+    </div>
+</div>
+
+<ng-template #loading>
+    <img src='https://miro.medium.com/max/882/1*9EBHIOzhE1XfMYoKz1JcsQ.gif' />
+</ng-template>

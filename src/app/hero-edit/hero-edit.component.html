@@ -1,0 +1,32 @@
+<div *ngIf="hero; else loading">
+    <h2>{{hero.name | uppercase}} Details</h2>
+    <div><label>ID: </label>{{hero.id}}</div>
+    <div>
+        <label>Name:
+        </label>
+        <input [(ngModel)]="hero.name" placeholder="Name" />
+    </div>
+    <div>
+        <label>Superpower:
+
+        </label>
+        <input [(ngModel)]='hero.superpower' placeholder="Superpower" />
+    </div>
+    <div title='Insert color name or hexadecimal'>
+        <label>Suit color:
+        </label>
+        <div class='suit-label'>
+            <input [(ngModel)]='hero.suitColor'>
+            <div class='suit-color' [ngStyle]="{'background-color':hero.suitColor}">
+            </div>
+        </div>
+
+    </div>
+
+    <button (click)="goBack()">Go Back</button>
+    <button (click)="save()">Save</button>
+</div>
+
+<ng-template #loading>
+    <img src='https://miro.medium.com/max/882/1*9EBHIOzhE1XfMYoKz1JcsQ.gif' />
+</ng-template>

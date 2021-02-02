@@ -1,0 +1,20 @@
+<div *ngIf="crisisObs | async as crisis; else loading">
+    <h2>{{crisis.title | uppercase }} Details</h2>
+    <img src="{{ crisis.img }}" />
+
+    <div *ngIf="randoms">
+        <div class='title'>Heroes involved:</div>
+        <div class='container'>
+            <div routerLink="/heroes/{{hero.id}}" class='hero' *ngFor='let hero of randoms'>
+                {{ hero.name }}
+            </div>
+        </div>
+    </div>
+
+    <button (click)="goBack()">go back</button>
+</div>
+
+
+<ng-template #loading>
+    <img src='https://miro.medium.com/max/882/1*9EBHIOzhE1XfMYoKz1JcsQ.gif' />
+</ng-template>

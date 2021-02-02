@@ -1,0 +1,17 @@
+<h2>My Heroes</h2>
+<button routerLink="/heroes/create">
+    Create new Hero
+</button>
+
+<ul *ngIf="heroes; else loading" class="heroes">
+    <li *ngFor="let hero of heroes">
+        <a routerLink="/heroes/{{hero.id}}">
+            <span class="badge">{{hero.id}}</span> {{hero.name}}
+        </a>
+        <button class="delete" title="delete hero" (click)="delete(hero)">x</button>
+    </li>
+</ul>
+
+<ng-template #loading>
+    <img style='display: block;' src='https://miro.medium.com/max/882/1*9EBHIOzhE1XfMYoKz1JcsQ.gif' />
+</ng-template>

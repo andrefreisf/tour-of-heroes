@@ -1,0 +1,45 @@
+<div>
+    <h3>Add a new Hero</h3>
+
+    <form [formGroup]="createForm" (ngSubmit)="onSubmit()" class='create-form'>
+
+        <div class='input-div'>
+            <label for="name">
+                Name
+            </label>
+            <input id="name" type="text" formControlName="name" required>
+
+            <span *ngIf="name!.invalid && name!.touched">
+                Name must be at least 6 characters!
+            </span>
+
+        </div>
+
+        <div class='input-div'>
+            <label for="superpower">
+                Superpower
+            </label>
+            <input id="superpower" type="text" formControlName="superpower" required>
+
+            <span *ngIf="superpower!.invalid && superpower!.touched">
+                Superpower must be at least 6 characters!
+            </span>
+        </div>
+
+        <div class='input-div'>
+            <label for="suitColor">
+                Suit Color
+            </label>
+            <input id="suitColor" type="text" formControlName="suitColor" required>
+
+            <span *ngIf="suitColor!.invalid && suitColor!.touched">
+                Suit color is required!
+            </span>
+        </div>
+
+        <button class="button" type="submit" [disabled]='createForm.invalid'>Add</button>
+
+    </form>
+
+    <span class='pill-success' *ngIf='success'>Successfully added hero!</span>
+</div>

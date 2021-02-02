@@ -1,0 +1,57 @@
+/* AppComponent's private CSS styles */
+h1 {
+    font-size: 1.2em;
+    margin-bottom: 0;
+}
+nav a {
+    padding: 5px 10px;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+    background-color: #eee;
+    border-radius: 4px;
+}
+nav a:visited,
+a:link {
+    color: #334953;
+}
+nav a:hover {
+    color: #039be5;
+    background-color: #cfd8dc;
+}
+nav a.active {
+    color: #039be5;
+}
+
+.brand {
+    padding: 14px 16px;
+    color: #039be5;
+    user-select: none;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(63, 63, 63);
+    font-weight: bold;
+    li {
+        float: left;
+        a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+
+            &:hover {
+                background-color: rgb(27, 27, 27);
+            }
+
+            &.active {
+                background-color: rgb(27, 27, 27);
+            }
+        }
+    }
+}
